@@ -1,0 +1,42 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 320px;
+    background-color: white;
+}
+
+.colorSidebar {
+    height: 80px;
+    width: 320px;;
+    background-color: #161D2A;
+}
+
+.nav a {
+font-size: 14px;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 1.25px;
+text-align: left;
+color: black;
+}
+
+.nav a:hover {
+    color: #FF6B0A;
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
+    margin: 40px;
+}
+
+.userProfile p {
+font-size: 12px;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0.4000000059604645px;
+text-align: left;
+margin-left: 10px;
+}
+

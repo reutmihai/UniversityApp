@@ -1,0 +1,9 @@
+.title-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.faculties-section {
+    display: block;
+}

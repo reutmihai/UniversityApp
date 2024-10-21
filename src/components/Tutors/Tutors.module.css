@@ -1,0 +1,56 @@
+.tutorsListItem {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 24px;
+}
+
+.tutorSection h1 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 1.25px;
+  text-align: left;
+  margin: 32px 0px;
+}
+
+.tutorSection button {
+  background-color: #ff6b0a;
+  text-transform: uppercase;
+  padding: 8px 16px 8px 16px;
+  gap: 10px;
+  margin: 32px 0px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 1.25px;
+  text-align: center;
+  color: white;
+  border-style: none;
+  transition: background-color 0.3 ease, transform 0.3 ease;
+}
+
+.tutorSection button:hover {
+  transform: scale(1.03);
+}
+
+
+.tutorSection button:disabled {
+  background-color: #ffe0b2;
+}
+
+.tutorSection button:disabled:hover {
+  transform: none;
+}
+
+
+.title-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
