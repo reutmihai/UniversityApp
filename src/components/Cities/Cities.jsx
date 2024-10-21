@@ -15,7 +15,7 @@ export default class Cities extends Component {
   };
 
   renderCities = cities => {
-    if (!cities || cities.length === 9) {
+    if (!cities || cities.length === 0) {
       return <div>There are no cities yet</div>;
     }
     return cities.map(city => {
