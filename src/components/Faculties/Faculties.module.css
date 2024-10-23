@@ -7,3 +7,55 @@
 .faculties-section {
     display: block;
 }
+
+.faculties-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.faculty-name {
+  background-color: white;
+  min-width: 370px;
+  padding: 19px 24px;
+}
+
+.faculties-section h1 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 1.25px;
+  text-align: left;
+}
+
+.faculties-section input {
+  padding: 10px;
+}
+
+.faculties-section button {
+  background-color: #ff6b0a;
+  text-transform: uppercase;
+  padding: 8px 16px 8px 16px;
+  margin: 32px 0px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 1.25px;
+  text-align: center;
+  color: white;
+  border-style: none;
+  transition: background-color 0.3 ease, transform 0.3 ease;
+}
+
+.faculties-section button:disabled {
+  background-color: #ffe0b2;
+}
+
+.faculties-section button:disabled:hover {
+  transform: none;
+}
+
+.faculties-section button:hover {
+  transform: scale(1.03);
+}

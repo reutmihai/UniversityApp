@@ -1,20 +1,13 @@
-import React, { Component } from 'react';
+import { useState, useEffect } from 'react'
 import { Icon } from '../Common/Icon/Icon';
 import AddCities from '../AddCities/AddCities';
 import styles from '../Cities/Cities.module.css';
 
-export default class Cities extends Component {
-  state = {
-    isAddCityVisible: false,
-    cities: [
-      {
-        name: 'Suceava',
-        id: Date.now(),
-      },
-    ],
-  };
+const Cities = () => {
+  const [isAddCityVisible, setIsAddCityVisible] = useState(false);
+  const [cities, setCities] = useState([]);
 
-  renderCities = cities => {
+  const renderCities = cities => {
     if (!cities || cities.length === 0) {
       return <div>There are no cities yet</div>;
     }
@@ -27,35 +20,33 @@ export default class Cities extends Component {
     });
   };
 
-  handleAddCity = city => {
+  const handleAddCity = city => {
     const newId = Date.now();
     const addNewCity = {
       name: city.name,
       id: newId,
     };
 
-    this.setState(prevState => {
-      return {
-        cities: [...prevState.cities, addNewCity],
-        isAddCityVisible: false,
-      };
+    setCities((prevState) => {
+      return [...prevState, addNewCity];
     });
+    setIsAddCityVisible(false);
+
   };
 
-  render() {
-    const { isAddCityVisible, cities } = this.state;
     return (
       <section className={styles['cities-section']}>
         <div className={styles['title-icon']}>
           <Icon variant="pin" label="pin" />
           <h1>Cities</h1>
         </div>
-        <div className={styles['cities-list']}>{this.renderCities(cities)}</div>
-        {isAddCityVisible && <AddCities onCitiesSubmit={this.handleAddCity} />}
-        <button onClick={() => this.setState({ isAddCityVisible: true })}>
+        <div className={styles['cities-list']}>{renderCities(cities)}</div>
+        {isAddCityVisible && <AddCities onCitiesSubmit={handleAddCity} />}
+        <button onClick={() => setIsAddCityVisible(true)}>
           ADD CITY
         </button>
       </section>
     );
-  }
 }
+
+export default Cities;

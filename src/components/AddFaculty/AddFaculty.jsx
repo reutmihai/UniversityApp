@@ -1,31 +1,29 @@
-import React, { Component } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from "prop-types";
 import styles from '../AddFaculty/AddFaculty.module.css'
 
-export default class AddFaculty extends Component {
-    state = {
-        name: '',
-    }
+const AddFaculty = ({ onFacultySubmit }) => {
+  const [name, setName] = useState('');
 
-    handleSubmit = e => {
+    const handleSubmit = e => {
         e.preventDefault();
-        this.props.onAddFaculty(this.state);
+        onFacultySubmit({ name });
     };
 
-    handleChange = e => {
-        const { name, value } = e.target;
-        this.setState({ name: value});
+    const handleChange = e => {
+        const { value } = e.target;
+        setName(value);
     }
-  render() {
-    const { name } = this.state;
+
     return (
-      <form className={styles["faculties-form"]} onSubmit={this.handleSubmit}>
+      <form className={styles["faculties-form"]} onSubmit={handleSubmit}>
         <h2 className={styles["faculty-title"]}>Adding a faculty</h2>
         <input
           type="text"
           value={name}
           name="name"
           placeholder="Faculty"
-          onChange={this.handleChange}
+          onChange={handleChange}
           required
         />
         <button type="submit" disabled={!name}>
@@ -34,4 +32,9 @@ export default class AddFaculty extends Component {
       </form>
     );
   }
-}
+
+  AddFaculty.propTypes = {
+    onFacultySubmit: PropTypes.func.isRequired,
+  };
+
+  export default AddFaculty;

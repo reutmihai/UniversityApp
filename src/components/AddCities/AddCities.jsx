@@ -1,36 +1,38 @@
-import React, { Component } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import styles from '../AddCities/AddCities.module.css';
 
-export default class AddCities extends Component {
-  state = {
-    name: '',
-  };
+const AddCities = ({ onCitiesSubmit }) => {
+  const [name, setName] = useState('');
 
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
-    this.props.onCitiesSubmit(this.state);
+    onCitiesSubmit({ name });
   };
 
-  handleChange = e => {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
+  const handleChange = e => {
+    const { value } = e.target;
+    setName(value);
   };
 
-  render() {
-    const { name } = this.state;
     return (
-        <form className={styles['cities-form']} onSubmit={this.handleSubmit}>
+        <form className={styles['cities-form']} onSubmit={handleSubmit}>
           <h2 className={styles['city-title']}>Adding a city</h2>
             <input
               type="text"
               value={name}
               name="name"
               placeholder="City"
-              onChange={this.handleChange}
+              onChange={handleChange}
               required
             />
           <button type="submit" disabled={!name}>ADD</button>
         </form>
     );
-  }
 }
+
+AddCities.propTypes = {
+  onCitiesSubmit: PropTypes.func.isRequired,
+};
+
+export default AddCities;
