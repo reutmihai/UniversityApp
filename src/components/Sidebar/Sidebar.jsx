@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './Sidebar.module.css';
+import university from "../../assets/university-sidebar.png";
+import faculty from "../../assets/faculty-sidebar.png";
 
 const Sidebar = () => {
   return (
@@ -10,12 +12,18 @@ const Sidebar = () => {
           <ul>
             <li>
               <a href="#">
-                <span className={styles.icon}>📚</span> University
+                <span>
+                  <img src={faculty} className={styles.icon} />
+                </span>
+                University
               </a>
             </li>
             <li>
               <a href="#">
-                <span className={styles.icon}>🏛</span> Faculties
+                <span>
+                  <img src={university} className={styles.icon} />
+                </span>
+                Faculties
               </a>
             </li>
           </ul>
