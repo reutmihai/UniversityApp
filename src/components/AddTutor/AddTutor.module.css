@@ -1,0 +1,16 @@
+.addTutorForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    padding-left: 24px;
+    margin-top: 32px;
+}
+
+.addTutorForm input {
+    border: 1px solid #757575;
+    min-width: 480px;
+    padding: 15px;
+    margin-top: 10px;
+}
+

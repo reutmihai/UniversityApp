@@ -24,7 +24,7 @@ const Sidebar = () => {
 
       <div className={styles.userProfile}>
         <span className={styles.userIcon}>👤</span>
-        <p>Bill Gates</p>
+        <p>Reut Mihai</p>
       </div>
     </aside>
   );

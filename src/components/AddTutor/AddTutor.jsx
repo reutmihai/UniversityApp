@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
+import styles from '../AddTutor/AddTutor.module.css'
 
 const AddTutor = ({ onFormSubmit }) => {
   const [surname, setSurname] = useState('');
@@ -36,10 +37,9 @@ const AddTutor = ({ onFormSubmit }) => {
 
     return (
       <>
-        <form onSubmit={handleSubmit}>
-          <h1>Add Tutor</h1>
+        <form onSubmit={handleSubmit} className={styles.addTutorForm}>
+          <h2>Add Tutor</h2>
           <label>
-            <span>Surname</span>
             <input
               type="text"
               value={surname}
@@ -50,7 +50,6 @@ const AddTutor = ({ onFormSubmit }) => {
             />
           </label>
           <label>
-            <span>Name</span>
             <input
               type="text"
               value={name}
@@ -61,7 +60,6 @@ const AddTutor = ({ onFormSubmit }) => {
             />
           </label>
           <label>
-            <span>Phone number</span>
             <input
               type="tel"
               value={phone}
@@ -72,7 +70,6 @@ const AddTutor = ({ onFormSubmit }) => {
             />
           </label>
           <label>
-            <span>Email</span>
             <input
               type="email"
               value={email}
@@ -83,7 +80,6 @@ const AddTutor = ({ onFormSubmit }) => {
             />
           </label>
           <label>
-            <span>City</span>
             <input
               type="text"
               value={city}
@@ -94,7 +90,6 @@ const AddTutor = ({ onFormSubmit }) => {
             />
           </label>
           <label>
-            <span>Options</span>
             <input
               type="text"
               value={options}
