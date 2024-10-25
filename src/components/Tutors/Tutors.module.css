@@ -29,6 +29,7 @@
   color: white;
   border-style: none;
   transition: background-color 0.3 ease, transform 0.3 ease;
+  cursor: pointer;
 }
 
 .tutorSection button:hover {

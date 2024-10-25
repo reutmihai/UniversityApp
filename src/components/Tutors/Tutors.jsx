@@ -2,6 +2,7 @@ import styles from "./Tutors.module.css";
 import AddTutor from "../AddTutor/AddTutor";
 import { Icon } from "../Common/Icon/Icon";
 import { useEffect, useState } from "react";
+import tutorsService from "../../services/tutorsService";
 const TUTORS_KEY = "tutors";
 
 const Tutors = () => {
@@ -9,21 +10,26 @@ const Tutors = () => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    const data = localStorage.getItem(TUTORS_KEY);
-    try {
-      if (data && data !== "[]") {
-        setList(JSON.parse(data));
-      }
-    } catch (error) {
-      console.log("Error parsing localStorage data:", error);
+    async function getTutors() {
+      const response = await tutorsService.get();
+      setList(response);
     }
-  }, []);
+
+    getTutors().catch(() => {
+      console.log('A aparut o eroare la obisnerea listei de tutori');
+    })
+
+    
+  }, [list]);
 
   useEffect(() => {
     localStorage.setItem(TUTORS_KEY, JSON.stringify(list));
   }, [list]);
 
   const renderList = (items) => {
+    if (!list || list.length === 0) {
+      return <div>There are no tutors yet</div>;
+    }
     return items.map((el) => {
       return (
         <div key={el.id} className={styles.tutorsListItem}>

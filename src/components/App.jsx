@@ -3,19 +3,19 @@ import Tutors from './Tutors/Tutors';
 import Sidebar from './Sidebar/Sidebar';
 import Cities from './Cities/Cities';
 import Faculties from './Faculties/Faculties';
-import styles from '../components/App.module.css';
+import '../components/App.css';
 
 
 export default function App() {
   return (
-    <div className={styles.flexbox}>
+    <main className="flexbox">
       <Sidebar />
-      <div className={styles.content}>
+      <section className="container">
         <University />
         <Tutors />
         <Cities />
         <Faculties />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
