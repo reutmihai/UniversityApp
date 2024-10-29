@@ -2,10 +2,29 @@ import { useState, useEffect } from 'react'
 import { Icon } from '../Common/Icon/Icon';
 import AddCities from '../AddCities/AddCities';
 import styles from '../Cities/Cities.module.css';
+import citiesService from '../../services/citiesService';
+const CITIES_KEY = "cities";
 
 const Cities = () => {
   const [isAddCityVisible, setIsAddCityVisible] = useState(false);
   const [cities, setCities] = useState([]);
+
+    useEffect(() => {
+      async function getCities() {
+        try {
+          const response = await citiesService.get();
+          setCities(response);
+        } catch {
+          console.log("A apărut o eroare la obținerea listei de orașe");
+        }
+      }
+
+      getCities();
+    }, []); 
+
+    useEffect(() => {
+      localStorage.setItem(CITIES_KEY, JSON.stringify(cities));
+    }, [cities]);
 
   const renderCities = cities => {
     if (!cities || cities.length === 0) {

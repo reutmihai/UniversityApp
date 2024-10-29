@@ -12,7 +12,7 @@
     width: 320px;;
     background-color: #161D2A;
 }
-.nav {
+nav {
     padding-left: 10px;
 }
 
@@ -29,6 +29,13 @@ color: black;
 
 .nav a:hover {
     color: #FF6B0A;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    gap:10px;
+
 }
 
 .userProfile {
