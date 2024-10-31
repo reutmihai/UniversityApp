@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import Error from "../components/Error/Error";
+import Error from "../../../common/Error/Error";
 import { Link, NavLink, Outlet, useParams } from "react-router-dom";
 
 const FacultyContext = createContext();

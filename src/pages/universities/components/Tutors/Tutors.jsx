@@ -1,8 +1,8 @@
-import styles from "./Tutors.module.css";
-import AddTutor from "../AddTutor/AddTutor";
-import { Icon } from "../Common/Icon/Icon";
 import { useEffect, useState } from "react";
-import tutorsService from "../../services/tutorsService";
+import { Icon } from "../../../common/Icon/Icon";
+import tutorsService from "../../../../services/tutorsService";
+import AddTutor from "./AddTutor";
+import styles from "./Tutors.module.css";
 const TUTORS_KEY = "tutors";
 
 const Tutors = () => {

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Icon } from '../Common/Icon/Icon';
-import AddCities from '../AddCities/AddCities';
-import styles from '../Cities/Cities.module.css';
-import citiesService from '../../services/citiesService';
+import { Icon } from '../../../common/Icon/Icon';
+import AddCities from './AddCities';
+import styles from './Cities.module.css';
+import citiesService from '../../../../services/citiesService';
 const CITIES_KEY = "cities";
 
 const Cities = () => {

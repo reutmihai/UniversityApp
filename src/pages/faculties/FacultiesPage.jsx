@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Error from "../components/Error/Error";
+import Error from "../common/Error/Error";
 
 const FacultiesPage = () => {
   const [list, setList] = useState([]);

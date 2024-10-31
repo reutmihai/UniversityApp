@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import styles from '../AddTutor/AddTutor.module.css'
+import styles from './AddTutor.module.css'
 
 const AddTutor = ({ onFormSubmit }) => {
   const [surname, setSurname] = useState('');

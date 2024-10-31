@@ -1,0 +1,53 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 320px;
+  height: 50vw;
+  background-color: white;
+}
+
+.colorSidebar {
+  height: 80px;
+  width: 320px;
+  background-color: #161d2a;
+}
+nav {
+  padding-left: 10px;
+}
+
+.nav a {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 1.25px;
+  text-align: left;
+  color: black;
+}
+
+.nav a:hover {
+  color: #ff6b0a;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  margin: 40px 10px;
+}
+
+.userProfile p {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
+  margin-left: 10px;
+}

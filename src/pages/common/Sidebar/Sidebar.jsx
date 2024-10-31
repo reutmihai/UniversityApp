@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Sidebar.module.css";
-import university from "../../assets/university-sidebar.png";
-import faculty from "../../assets/faculty-sidebar.png";
-import University from "../University/University";
+import university from "../../../assets/university-sidebar.png";
+import faculty from "../../../assets/faculty-sidebar.png";
+import University from "../UniversityCard/UniversityCard";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {

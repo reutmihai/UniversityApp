@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styles from '../AddCities/AddCities.module.css';
+import styles from './AddCities.module.css';
 
 const AddCities = ({ onCitiesSubmit }) => {
   const [name, setName] = useState('');
