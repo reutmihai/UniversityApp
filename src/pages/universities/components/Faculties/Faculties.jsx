@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Icon } from "../../../Common/Icon/Icon";
+import { Icon } from "../../../common/Icon/Icon";
 import AddFaculty from "./AddFaculty";
 import styles from "./Faculties.module.css";
 
